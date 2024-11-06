@@ -15,8 +15,38 @@ dp = Dispatcher()
 async def main():
     bot = Bot(token='7231784221:AAFAbaYvA15xMj2JagVlzxMmZoSxV68N9rU')
     dp = Dispatcher()
-    dp.include_router(router)
     await dp.start_polling(bot)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
