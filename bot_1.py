@@ -18,13 +18,34 @@ async def main():
     await dp.start_polling(bot)
 
 
+@dp.message(CommandStart())
+async def start_cmd(message: Message):
+    await message.answer(f''
+                         )
 
 
+@dp.message(Command(commands=['help']))
+async def help_cmd(message: Message):
+    await message.answer(f''
+                         )
 
 
+@dp.message(Command(commands=['about']))
+async def about_cmd(message: Message):
+    await message.answer(f''
+                         )
 
 
+@dp.message(Command(commands='order'))
+async def order_cmd(message: Message):
+    await message.answer(f''
+                         )
 
+
+@dp.callback_query(F.text == 'Хочу сделать заказ')
+async def chose_order(message: Message):
+    await message.answer(f''
+                         )
 
 
 
