@@ -1,11 +1,9 @@
 import logging  
 import requests  
-from aiogram import Bot, Dispatcher, types  
-from aiogram import LoggingMiddleware  
-from aiogram.types import ParseMode  
+from aiogram import Bot, Dispatcher, types   
 from aiogram.utils import executor
 
-API_TOKEN = 'YOUR_API_TOKEN'
+API_TOKEN = 'Y7290191892:AAFmxpVWNtL5cYA-pight6m_f72qCSISKs4'
 
 # Настройка логгирования  
 logging.basicConfig(level=logging.INFO)
@@ -13,7 +11,6 @@ logging.basicConfig(level=logging.INFO)
 # Инициализация бота и диспетчера  
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
-dp.middleware.setup(LoggingMiddleware())
 
 # Обработка команды /recipe  
 @dp.message_handler(commands=['recipe'])
@@ -23,7 +20,7 @@ async def send_recipe_link(message: types.Message):
         await message.answer("Пожалуйста, укажите название рецепта после /recipe. Например: /recipe пицца")
         return
 
-    response = requests.get(f'https://api.edamam.com/search?q={recipe_name}&app_id=YOUR_APP_ID&app_key=YOUR_APP_KEY')
+    response = requests.get(f'https://api.edamam.com/search?q={recipe_name}&app_id=Y7290191892:AAFmxpVWNtL5cYA-pight6m_f72qCSISKs4&app_key=Y7290191892:AAFmxpVWNtL5cYA-pight6m_f72qCSISKs4')
     if response.status_code == 200:
         data = response.json()
         if data.get('hits'):
